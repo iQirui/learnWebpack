@@ -1,8 +1,16 @@
 const path=require("path")
-modele.exports={
+module.exports={
     entry:'./src/index.js',
     output:{
         path:path.resolve(__dirname,'dist'),
-        name:'bundle.js'
-    }
+        filename:'bundle.js'
+    },
+    module: {
+        rules: [
+          {
+            test: /\.css$/,
+            use: [ 'style-loader', 'css-loader' ]
+          }
+        ]
+      }
 }
