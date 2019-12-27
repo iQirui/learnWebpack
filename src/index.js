@@ -4,3 +4,4 @@ console.log("1www1")
 add(2,5)
 
 require("./css/normal.css")
+require("./css/special.less")
