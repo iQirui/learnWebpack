@@ -22,6 +22,17 @@ module.exports = {
                 use:[
                     "style-loader","css-loader","less-loader"//需要下载less less-loader 两个
                 ]
+            },
+            {
+                test:/\.(jpg|png|jpeg|gif)$/,//处理不了html文件
+                loader:"url-loader",
+                options:{
+                    limit:12*1024
+                }
+            },
+            {
+                test:/\.(jpg|png|jpeg|gif)$/,//处理不了html文件
+                loader:"html-loader"
             }
         ]
     },
