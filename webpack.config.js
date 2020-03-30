@@ -36,11 +36,23 @@ module.exports = {
                 test:/\.html$/,//处理不了html文件
                 loader:"html-loader"
             }
+            ,
+            {
+                exclude:/\.(jpg|png|jpeg|gif|less|css|js|html)$/,
+                loader:"file-loader"
+            },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template:'./src/index.html'
         })
-    ]
+    ],
+    devServer:{
+        contentBase: resolve(__dirname, 'build'),
+        //启动压缩
+        compress: true,
+        port: 9000,
+        open:true
+    }
 }

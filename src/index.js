@@ -1,5 +1,8 @@
-import './index.css'
-import './index.less'
+import './style/index.css'
+import './style/index.less'
+var y={}
+
+// var yy=y?.f?.j
 function add(x,y){
     return x+y;
 }
