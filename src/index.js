@@ -1,3 +1,4 @@
+import './index.css'
 function add(x,y){
     return x+y;
 }
