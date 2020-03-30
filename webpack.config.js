@@ -27,11 +27,13 @@ module.exports = {
                 test:/\.(jpg|png|jpeg|gif)$/,//处理不了html文件
                 loader:"url-loader",
                 options:{
-                    limit:12*1024
+                    limit:12*1024,
+                    //给图片重命名源文件名+hash前十位+源文件扩展名
+                    name:'[name].[hash:10].[ext]'
                 }
             },
             {
-                test:/\.(jpg|png|jpeg|gif)$/,//处理不了html文件
+                test:/\.html$/,//处理不了html文件
                 loader:"html-loader"
             }
         ]
