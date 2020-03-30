@@ -1,10 +1,10 @@
-const { resolev } = require('path');
+var { resolve } = require('path');
 module.exports = {
     mode:'development', //development  production
-    entry: './index.js',
+    entry: './src/index.js',
     output: {
         filename: "built.js",
-        path: resolev(__dirname, 'build')
+        path: resolve(__dirname, 'build')
     },
     module: {
         rules: [

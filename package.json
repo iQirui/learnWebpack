@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"webpack",
-    "dev":"webpack"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,8 @@
   },
   "homepage": "https://github.com/iQirui/learnWebpack#readme",
   "dependencies": {
+    "css-loader": "^3.4.2",
+    "style-loader": "^1.1.3",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   }
