@@ -1,7 +1,4 @@
-import {add} from "./js/mathUtils"
-console.log("111111")
-console.log("1www1")
-add(2,5)
-
-require("./css/normal.css")
-require("./css/special.less")
+function add(x,y){
+    return x+y;
+}
+console.log(add(1,4))
