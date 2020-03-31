@@ -4,7 +4,7 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');//css分离单独�
 var OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');//压缩css插件
 process.env.NODE_ENV='development'
 module.exports = {
-    mode:'production', //development  production
+    mode:'development', //development  production
     entry: './src/index.js',
     output: {
         filename: "js/built.js",
@@ -12,6 +12,55 @@ module.exports = {
     },
     module: {
         rules: [
+            // {
+            //     /*
+            //         语法检查 eslint eslint-loader
+            //         设置检查规则
+            //             package.json中eslintConfig中设置~ 
+            //             "eslintConfig":{
+            //                 "extends":"airbnb-base"
+            //             }
+
+            //             或者加.eslintrc文件
+            //             aribnb-->eslint eslint-plugin-import eslint-config-airbnb-base
+            //     */
+            //     test:/\.js$/,
+            //     loader:'eslint-loader',
+            //     include: resolve(__dirname, 'src'),
+            //     exclude:/node_modules/,
+            //     options:{
+            //         //或者在.eslintrc文件中配置
+            //         fix:true,
+            //         // rules:{
+            //             //     "no-console":"off"
+            //             // }
+            //         }
+            //     },
+            {
+                test:/\.js$/,
+                exclude:/node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: [
+                            ['@babel/preset-env',
+                            {
+                            useBuiltIns:"usage",
+                            corejs: { version: 3},
+                              targets:{
+                                  chrome:"60",
+                                  ie:"11"
+                              }
+                                }
+                            ]
+                        ]
+                    }
+                  }
+                // loader:"babel-loader",
+                // options:{
+                //     presets:["@babel/preset-env"]
+                // }
+            },
             {
                 test:/\.css$/,
                 use:[
